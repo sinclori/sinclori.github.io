@@ -1,0 +1,174 @@
+/* 
+Lori Sinclair
+10/17/2019
+Lab 4 - Media Queries and Multimedia
+*/
+
+*{
+    /* this removes default for items within here */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background:darkcyan url(./multimedia/sergio-souza-ttVkhv0Wd5A-unsplash.jpg) no-repeat center center/cover;
+    color: orangered;
+    text-align: center;
+    padding: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+/* === NAVIGATION === */
+nav {
+    width: 100%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: darkcyan;
+    list-style-type: none;
+}
+nav li {
+    display: inline-block;
+    width: 16%;
+    padding-left: 1rem;
+}
+nav a {
+    text-decoration: none;
+    color: aliceblue;
+    text-align: center;
+}
+/* === === */
+
+body {
+    font-family: sans-serif;
+    background-color: rgb(189, 211, 201);
+}
+
+#animateBox {
+    width: 400px;
+    height: 50px;
+    position: relative;
+    top: 1rem;
+    left: 1rem;
+    font-family: cursive;
+    color: orangered;
+    animation-name: sbr;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 3;
+}
+
+@keyframes sbr {
+    33%{
+        left: 5rem;
+    }
+    66%{
+        left: 10rem;
+    }
+    100%{
+        left: 1rem;
+    }
+}
+
+h2 {
+    text-align: left;
+    padding-bottom: 1rem;
+    color: orangered;
+}
+
+article {
+    float: left;
+    padding: 8px;
+    margin: 8px;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+video {
+    width: 50%;
+    margin: 1rem;
+}
+
+/* MOBILE use 1 column, and remove pictures and videos */
+@media (max-width: 524px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    nav a {
+        font-size: 1.1rem;
+    }
+    img.showImage {
+        display: none;
+    }
+    body {
+        font-size: 1rem;
+        background-color: lightgray;
+        color: black;
+    }
+    article {
+        padding: 2px;
+        margin: 2px;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    video {
+        display: none;
+    }
+}
+
+/* TABLET use 2 columns */
+@media (min-width: 525px) and (max-width: 799px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    body {
+        font-size: 1.2rem;
+        background-color: rgb(198, 213, 236);
+        color: darkblue;
+    }
+    article {
+        padding: 4px;
+        margin: 4px;
+        column-count: 2;
+        column-gap: 3em;
+        column-rule: 3px darkblue dotted;
+    }
+}
+
+/* DESKTOP use 3 columns */
+@media (min-width: 800px) {
+    body {
+        font-size: 1.4rem;
+        color: darkgreen;
+    }
+    article {
+        column-count: 3;
+        column-gap: 3em;
+        column-rule: 3px darkgreen dotted;
+    }
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+footer {
+    width: 100%;
+    padding-top: 0.5em;
+    float: left;
+    margin: auto;
+    background-color: darkcyan;
+    color: aliceblue;
+    text-align: center;
+    font-size: 0.9rem;
+}
